@@ -1,0 +1,79 @@
+.body1 {
+    position: relative;
+    font-family: 'calibri', 'Times New Roman';
+    width: auto;
+    height: auto;
+    padding: 30px;
+    border: 2px solid #000000;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.resume {
+    font-family: 'Calibri', 'Times New Roman';
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline 2px;
+}
+
+.body1 .details {
+    text-align: center;
+}
+
+.body1 .details .name {
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.body1 .details .para {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.body1 .heading {
+    font-size: 23px;
+    font-weight: 700;
+    background-color: #D9D9D9;
+}
+
+.body1 .matter {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 0.8cm;
+}
+
+.body1 .objective {
+    padding-top: 30px;
+}
+
+.body1 .education {
+    padding-top: 40px;
+}
+
+.body1 .table {
+    padding-top: 50px;
+}
+
+.body1 .project {
+    padding-top: 30px;
+}
+
+.body1 .project .projecttitle {
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.body1 .technical {
+    padding-top: 30px;
+}
+
+.body1 .curricular {
+    padding-top: 30px;
+}
+
+.body1 .declaration {
+    padding-top: 30px;
+}
