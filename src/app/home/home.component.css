@@ -1,0 +1,9 @@
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.router {
+    display: flex;
+    justify-content: center;
+}
