@@ -7,13 +7,17 @@ import { TambolaComponent } from './tambola/tambola.component';
 import { ResumeComponent } from './resume/resume.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { GooglehomeComponent } from './googlehome/googlehome.component';
+import { DefaultComponent } from './default/default.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TambolaComponent,
     ResumeComponent,
-    HomeComponent
+    HomeComponent,
+    GooglehomeComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
