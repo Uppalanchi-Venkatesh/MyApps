@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppleComponent } from './apple/apple.component';
+import { ColorgeneratorComponent } from './colorgenerator/colorgenerator.component';
 import { DefaultComponent } from './default/default.component';
 import { GooglehomeComponent } from './googlehome/googlehome.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'tambola', component: TambolaComponent, data: {title : 'Tambola'}},
   {path: 'google', component: GooglehomeComponent, data: {title : 'Google'}},
   {path: 'apple', component: AppleComponent, data: {title : 'Apple'}},
+  {path: 'colorgenerator', component: ColorgeneratorComponent, data: {title : 'RGB color'}},
   {path: '**', component: DefaultComponent, data: {title : 'Error'}}
 ];
 
@@ -28,5 +30,6 @@ export const MyComponents = [
   TambolaComponent,
   GooglehomeComponent,
   DefaultComponent,
-  AppleComponent
+  AppleComponent,
+  ColorgeneratorComponent
 ] 
