@@ -31,6 +31,7 @@ function getInfo() {
         .then(data => {
             //console.log(JSON.stringify(data));
             //console.log(data.result[0]);
+            document.getElementById("cf-ratingchange").innerHTML="";
             var table = document.createElement("TABLE");
             table.setAttribute("id", "myTable");
             table.setAttribute("class", "table");
