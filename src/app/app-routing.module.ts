@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppleComponent } from './apple/apple.component';
+import { CodeforcesComponent } from './codeforces/codeforces.component';
 import { ColorgeneratorComponent } from './colorgenerator/colorgenerator.component';
 import { DefaultComponent } from './default/default.component';
 import { GooglechartComponent } from './googlechart/googlechart.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'apple', component: AppleComponent, data: {title : 'Apple'}},
   {path: 'colorgenerator', component: ColorgeneratorComponent, data: {title : 'RGB color'}},
   {path: 'googlechart', component: GooglechartComponent, data: {title : 'Google Chart'}},
+  {path: 'cfcrawler', component: CodeforcesComponent, data: {title : 'Codeforces Data'}},
   {path: '**', component: DefaultComponent, data: {title : 'Error'}}
 ];
 
@@ -34,5 +36,6 @@ export const MyComponents = [
   DefaultComponent,
   AppleComponent,
   ColorgeneratorComponent,
-  GooglechartComponent
+  GooglechartComponent,
+  CodeforcesComponent
 ] 
