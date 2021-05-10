@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppleComponent } from './apple/apple.component';
 import { ColorgeneratorComponent } from './colorgenerator/colorgenerator.component';
 import { DefaultComponent } from './default/default.component';
+import { GooglechartComponent } from './googlechart/googlechart.component';
 import { GooglehomeComponent } from './googlehome/googlehome.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'google', component: GooglehomeComponent, data: {title : 'Google'}},
   {path: 'apple', component: AppleComponent, data: {title : 'Apple'}},
   {path: 'colorgenerator', component: ColorgeneratorComponent, data: {title : 'RGB color'}},
+  {path: 'googlechart', component: GooglechartComponent, data: {title : 'Google Chart'}},
   {path: '**', component: DefaultComponent, data: {title : 'Error'}}
 ];
 
@@ -31,5 +33,6 @@ export const MyComponents = [
   GooglehomeComponent,
   DefaultComponent,
   AppleComponent,
-  ColorgeneratorComponent
+  ColorgeneratorComponent,
+  GooglechartComponent
 ] 
