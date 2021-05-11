@@ -1,41 +1,45 @@
 <div class="container pt-3">
-    <div class="cf-form jumbotron">
-        <div class="cf-maintitle">Codeforces Crawler</div>
-        <input type="text" placeholder="Enter Username" id="cf-username">
-        <div class="btn btn-primary btn-sm" onclick="getInfo()">Get info</div> 
-    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-x1-12">
+            <div class="cf-form jumbotron">
+                <div class="cf-maintitle">Codeforces Crawler</div>
+                <input type="text" placeholder="Enter Username" id="cf-username">
+                <div class="btn btn-primary btn-sm" onclick="getInfo()">Get info</div>
+            </div>
 
-    <div id="cf-response">
-        <div class="cf-details">
-            <div class="cf-title">Ratings and Rankings</div>
-            <table class="table">
-                <tr>
-                    <td>Rating</td>
-                    <td id="rating"></td>
-                </tr>
-                <tr>
-                    <td>Rank</td>
-                    <td id="rank"></td>
-                </tr>
-                <tr>
-                    <td>Max Rating</td>
-                    <td id="maxrating"></td>
-                </tr>
-                <tr>
-                    <td>Max Rank</td>
-                    <td id="maxrank"></td>
-                </tr>
-            </table>
-        </div>
+            <div id="cf-response">
+                <div class="cf-details">
+                    <div class="cf-title">Ratings and Rankings</div>
+                    <table class="table">
+                        <tr>
+                            <td>Rating</td>
+                            <td id="rating"></td>
+                        </tr>
+                        <tr>
+                            <td>Rank</td>
+                            <td id="rank"></td>
+                        </tr>
+                        <tr>
+                            <td>Max Rating</td>
+                            <td id="maxrating"></td>
+                        </tr>
+                        <tr>
+                            <td>Max Rank</td>
+                            <td id="maxrank"></td>
+                        </tr>
+                    </table>
+                </div>
 
-        <div>
-            <div class="cf-title">Participated contests and rankings</div>
-            <div id="cf-ratingchange"></div>
-        </div>
+                <div>
+                    <div class="cf-title">Participated contests and rankings</div>
+                    <div id="cf-ratingchange"></div>
+                </div>
 
-        <div class="cf-charts">
-            <div id="cf-verdictchart"></div>
-            <div id="cf-languagechart"></div>
+                <div class="cf-charts">
+                    <div id="cf-verdictchart"></div>
+                    <div id="cf-languagechart"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
