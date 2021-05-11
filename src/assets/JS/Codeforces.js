@@ -1,6 +1,7 @@
 var verdicts=[],languages=[];
 
 function getInfo() {
+    verdicts=[];languages=[];
     const username = document.getElementById("cf-username").value;
     if(!username) {
         alert("Enter the username");

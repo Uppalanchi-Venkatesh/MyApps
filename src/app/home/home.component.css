@@ -1,9 +1,17 @@
+.container {
+    font-family: 'calibri';
+}
+
 h1 {
     text-align: center;
     padding: 20px;
 }
 
 .router {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
