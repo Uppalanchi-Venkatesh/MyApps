@@ -9,6 +9,7 @@ import { GooglehomeComponent } from './googlehome/googlehome.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { TambolaComponent } from './tambola/tambola.component';
+import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, data: {title : 'Homepage'}},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'colorgenerator', component: ColorgeneratorComponent, data: {title : 'RGB color'}},
   {path: 'googlechart', component: GooglechartComponent, data: {title : 'Google Chart'}},
   {path: 'cfcrawler', component: CodeforcesComponent, data: {title : 'Codeforces Data'}},
+  {path: 'todo', component: TodoComponent, data: {title : 'Todo List'}},
   {path: '**', component: DefaultComponent, data: {title : 'Error'}}
 ];
 
@@ -37,5 +39,6 @@ export const MyComponents = [
   AppleComponent,
   ColorgeneratorComponent,
   GooglechartComponent,
-  CodeforcesComponent
+  CodeforcesComponent,
+  TodoComponent
 ] 
