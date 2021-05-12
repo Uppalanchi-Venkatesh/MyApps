@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { TambolaComponent } from './tambola/tambola.component';
 import { TodoComponent } from './todo/todo.component';
+import { TodowithstorageComponent } from './todowithstorage/todowithstorage.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, data: {title : 'Homepage'}},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'googlechart', component: GooglechartComponent, data: {title : 'Google Chart'}},
   {path: 'cfcrawler', component: CodeforcesComponent, data: {title : 'Codeforces Data'}},
   {path: 'todo', component: TodoComponent, data: {title : 'Todo List'}},
+  {path: 'todowithstorage', component: TodowithstorageComponent, data: {title : 'Todo List With Storage'}},
   {path: '**', component: DefaultComponent, data: {title : 'Error'}}
 ];
 
@@ -40,5 +42,6 @@ export const MyComponents = [
   ColorgeneratorComponent,
   GooglechartComponent,
   CodeforcesComponent,
-  TodoComponent
+  TodoComponent,
+  TodowithstorageComponent
 ] 

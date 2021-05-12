@@ -10,7 +10,6 @@ function placetodo() {
     todoList.appendChild(div);
     div.style.cssText = 'background-color:#f5f7fa;width:76%;min-height:50px;border-radius:5px;\
     color:black;padding-top:5px;padding-bottom-5px;padding-left:20px;padding-right:20px;font-size:25px;';
-    div.setAttribute("class","overflow-visible");
     div.innerHTML = text;
     todo.value = '';
     var button = document.createElement("BUTTON");

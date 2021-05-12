@@ -44,7 +44,7 @@ function getInfo() {
                     var cell3 = row.insertCell(0);
                     var cell4 = row.insertCell(0);
                     var cell5 = row.insertCell(0);
-                    cell5.innerHTML="ContestID";
+                    cell5.innerHTML="Contest ID";
                     cell4.innerHTML="Contest Name";
                     cell3.innerHTML="Old Rating";
                     cell2.innerHTML="New Rating";

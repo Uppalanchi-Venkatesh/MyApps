@@ -37,7 +37,8 @@
               "./src/assets/JS/RGBColor.js",
               "./src/assets/JS/GoogleChart.js",
               "./src/assets/JS/Codeforces.js",
-              "./src/assets/JS/Todo.js"
+              "./src/assets/JS/Todo.js",
+              "./src/assets/JS/TodoWithStorage.js"
             ]
           },
           "configurations": {
