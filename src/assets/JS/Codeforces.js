@@ -106,7 +106,6 @@ function getInfo() {
         })
         .catch(err => {
             alert("Some error occured");
-            return;
         });
 }
 

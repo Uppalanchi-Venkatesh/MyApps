@@ -34,6 +34,7 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/popper.js/dist/umd/popper.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./src/assets/JS/Tambola.js",
               "./src/assets/JS/RGBColor.js",
               "./src/assets/JS/GoogleChart.js",
               "./src/assets/JS/Codeforces.js",

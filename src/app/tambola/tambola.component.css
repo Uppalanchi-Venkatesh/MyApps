@@ -1,66 +1,25 @@
-/* .parent {
-    position: relative;
-    background-image: linear-gradient( rgba(0,0,0, 0.7), rgba(0,0,0, 0.7));
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: auto;
-    height: 100vh;
-    font-family: 'calibri';
-    overflow: hidden;
+:host {
+    --background--: white;
+    --borders--: black;
+    --text--: black;
 }
 
-.title {
-    font-size: 40px;
-    font-weight: 500;
-    text-align: center;
-    text-decoration: 2px underline;
+.body {
+    min-height: 100vh;
+    width: 100%;
 }
 
-.boxes {
-    padding-top: 20px;
+.navbar1 {
+    position: sticky;
+    top: 0px;
+    height: 10vh;
+    background-color: var(--borders--);
     display: flex;
-    justify-content: space-evenly;
-}
-
-.box-1 {
-    background-color: white;
-    font-size: 30px;
-    border-radius: 10px;
-    border: 2px solid black; 
-    width: 100px;
-    height: 100px; 
-}
-
-.tableparent {
-    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.table{
-    margin-top: 30px;
-    border: 2px solid black;
-    width: 600px;
-    height: 270px; 
-}
-
-tr,td{
-    background-color: white;
-    height: 40px;
-    width: 50px;
-    text-align: center;
-    border: 2px solid black;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.num {
-    margin-top: -15px;
-    font-size: 22px;
-    font-weight: 500;
-} */
-
-h1 {
-    text-align: center;
-    margin-top: 30px;
+.title {
+    color: white;
+    font-size: 30px;
 }
