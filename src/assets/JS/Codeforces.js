@@ -10,9 +10,7 @@ function getInfo() {
     const URL="https://codeforces.com/api/";
 
     fetch(`${URL}user.info?handles=${username}`)
-        .then(res => {
-            return res.json()
-        })
+        .then(res => { return res.json(); })
         .then(data => {
             if(data.status==="FAILED") {
                 alert("Incorrect username");
@@ -25,75 +23,55 @@ function getInfo() {
             document.getElementById("cf-response").style.display="inline";
 
             fetch(`${URL}user.rating?handle=${username}`)
-                .then(res => {
-                    return res.json();
-                })
+                .then(res => { return res.json(); })
                 .then(data1 => {
-                    document.getElementById("cf-ratingchange").innerHTML="";
-                    var table = document.createElement("TABLE");
-                    table.setAttribute("id", "myTable");
-                    table.setAttribute("class", "table");
-                    document.getElementById("cf-ratingchange").appendChild(table);
-                    var header = table.createTHead();
-                    header.setAttribute("id","cf-thead");
-                    document.getElementById("cf-thead").style.fontWeight="bold";
-                    document.getElementById("myTable").style.fontSize="18px";
-                    var row = header.insertRow(0);
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(0);
-                    var cell3 = row.insertCell(0);
-                    var cell4 = row.insertCell(0);
-                    var cell5 = row.insertCell(0);
-                    cell5.innerHTML="Contest ID";
-                    cell4.innerHTML="Contest Name";
-                    cell3.innerHTML="Old Rating";
-                    cell2.innerHTML="New Rating";
-                    cell1.innerHTML="Rank";
+                    let maindiv = document.getElementById("cf-ratingchange");
+                    maindiv.innerHTML="";
+                    let table = document.createElement("table");
+                    table.setAttribute("class", "table table-bordered");
+                    let tr1 = document.createElement("tr");
+                    let td11 = document.createElement("th");
+                    let td21 = document.createElement("th");
+                    let td31 = document.createElement("th");
+                    let td41 = document.createElement("th");
+                    let td51 = document.createElement("th");
+                    td11.appendChild(document.createTextNode("Contest ID"));
+                    td21.appendChild(document.createTextNode("Contest Name"));
+                    td31.appendChild(document.createTextNode("Old Rating"));
+                    td41.appendChild(document.createTextNode("New Rating"));
+                    td51.appendChild(document.createTextNode("Rank"));
+                    tr1.append(td11,td21,td31,td41,td51);
+                    table.appendChild(tr1);
                     for(let i=0;i<data1.result.length;i++) {
-                        var tr = document.createElement("TR");
-                        tr.setAttribute("id", "myTr"+(i+1));
-                        document.getElementById("myTable").appendChild(tr);
-                        var td1 = document.createElement("TD");
-                        var td2 = document.createElement("TD");
-                        var td3 = document.createElement("TD");
-                        var td4 = document.createElement("TD");
-                        var td5 = document.createElement("TD");
-                        document.getElementById("myTr"+(i+1)).appendChild(td1);
-                        document.getElementById("myTr"+(i+1)).appendChild(td2);
-                        document.getElementById("myTr"+(i+1)).appendChild(td3);
-                        document.getElementById("myTr"+(i+1)).appendChild(td4);
-                        document.getElementById("myTr"+(i+1)).appendChild(td5);
-                        cell1 = document.createTextNode(data1.result[i].contestId);
-                        cell2 = document.createTextNode(data1.result[i].contestName);
-                        cell3 = document.createTextNode(data1.result[i].oldRating);
-                        cell4 = document.createTextNode(data1.result[i].newRating);
-                        cell5 = document.createTextNode(data1.result[i].rank);
-                        td1.appendChild(cell1);
-                        td2.appendChild(cell2);
-                        td3.appendChild(cell3);
-                        td4.appendChild(cell4);
-                        td5.appendChild(cell5);
+                        let tr = document.createElement("tr");
+                        let td1 = document.createElement("td");
+                        let td2 = document.createElement("td");
+                        let td3 = document.createElement("td");
+                        let td4 = document.createElement("td");
+                        let td5 = document.createElement("td");
+                        td1.appendChild(document.createTextNode(data1.result[i].contestId));
+                        td2.appendChild(document.createTextNode(data1.result[i].contestName));
+                        td3.appendChild(document.createTextNode(data1.result[i].oldRating));
+                        td4.appendChild(document.createTextNode(data1.result[i].newRating));
+                        td5.appendChild(document.createTextNode(data1.result[i].rank));
+                        tr.append(td1,td2,td3,td4,td5);
+                        table.appendChild(tr);
                     }
+                    maindiv.appendChild(table);
                 });
 
                 fetch(`${URL}user.status?handle=${username}`)
-                    .then(res=> {
-                        return res.json();
-                    })
+                    .then(res=> { return res.json(); })
                     .then(data1 => {
                         var map1=new Map();
                         var map2=new Map();
                         for(let i=0;i<data1.result.length;i++) {
                             let key1=data1.result[i].verdict;
                             let key2=data1.result[i].programmingLanguage;
-                            if(map1.has(key1))
-                                map1.set(key1,map1.get(key1)+1);
-                            else
-                                map1.set(key1,1);
-                            if(map2.has(key2))
-                                map2.set(key2,map2.get(key2)+1);
-                            else
-                                map2.set(key2,1);
+                            if(map1.has(key1)) map1.set(key1,map1.get(key1)+1);
+                            else map1.set(key1,1);
+                            if(map2.has(key2)) map2.set(key2,map2.get(key2)+1);
+                            else map2.set(key2,1);
                         }
                         map1.forEach((key,value) => verdicts.push([value,key]));
                         google.charts.load('current', {'packages':['corechart']});
@@ -104,9 +82,7 @@ function getInfo() {
                         google.charts.setOnLoadCallback(draw2);
                     });
         })
-        .catch(err => {
-            alert("Some error occured");
-        });
+        .catch(err => alert("Some error occured"));
 }
 
 function draw1() {

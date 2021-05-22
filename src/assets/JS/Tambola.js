@@ -1,9 +1,8 @@
 //window.onload = () => {
     //(function tablegen() {
     
-        console.log('Tambola working');
         //document.addEventListener("mouseout",() => {
-            if(document.getElementById('tableparent')) {
+            /*if(document.getElementById('tableparent')) {
                 var tableparent = document.getElementById('tableparent');
                 var table = document.createElement('table');
                 var tbody = document.createElement('tbody')
@@ -21,7 +20,7 @@
                 }
                 table.appendChild(tbody);
                 tableparent.appendChild(table);
-            }
+            }*/
         //});
     //})();
 //}

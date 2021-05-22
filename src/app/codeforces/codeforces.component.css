@@ -53,6 +53,10 @@
     margin-bottom: 20px;
 }
 
+#cf-ratingchange {
+    font-size: 18px;
+}
+
 .table {
     width: 400px;
     font-size: 18px;
