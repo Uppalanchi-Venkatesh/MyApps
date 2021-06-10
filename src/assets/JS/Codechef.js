@@ -4,7 +4,7 @@ function codechefSubmissions() {
         alert("Enter the username");
         return false;
     }
-
+    /*
     $.ajax({
         url: `/api/codechef/${username}`,
         method: 'GET',
@@ -40,13 +40,15 @@ function codechefSubmissions() {
             console.error(err);
         }
     });
+    */
 
-    /*
-    const URL="https://venkat-bz-weblearn.herokuapp.com/api/codechef/";
+    
+    //const URL="https://venkat-bz-weblearn.herokuapp.com/api/codechef/";
+    const URL = "http://localhost:3000/api/codechef/";
     fetch(`${URL}${username}`)
         .then(res => { return res.json(); })
         .then(data => {
-            if(data.status==="failed") {
+            if(data.status=="failed") {
                 alert("Incorrect username");
                 return false;
             }
@@ -77,5 +79,5 @@ function codechefSubmissions() {
             console.error("Error: " + err);
             alert("Some error occured. Please try again");
         });
-    */
+    
 }

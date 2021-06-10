@@ -1,12 +1,22 @@
+.wholebody {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 70%;
+    background-color: white;
+}
+
 .body1 {
     position: relative;
     font-family: 'calibri', 'Times New Roman';
     width: auto;
     height: auto;
     padding: 30px;
-    border: 2px solid #000000;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    border: 3px solid #000000;
+    margin: 50px;
+    margin-bottom: 0px;
 }
 
 .resume {
@@ -78,6 +88,10 @@
 
 .body1 .declaration {
     padding-top: 30px;
+}
+
+.empty {
+    height: 50px;
 }
 
 @media all and (max-width: 800px) {
