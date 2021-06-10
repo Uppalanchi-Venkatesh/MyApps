@@ -10,7 +10,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 app.get('/api/codechef/:handle', (req, res) => {
-    console.log('Request came here');
     codechefLib.userSubmissions(req.params.handle)
         .then(data => res.send(data))
         .catch(err => {
@@ -20,7 +19,6 @@ app.get('/api/codechef/:handle', (req, res) => {
 });
 
 app.get('/*', (req, res) => {
-    console.log('Request came here also');
     res.sendFile(path.join(__dirname + '/dist/MyResume/index.html'));
 });
 
