@@ -5,15 +5,22 @@ const cors = require('cors');
 const codechefLib = require('./src/assets/Lib/Codechef');
 
 app.use(express.static(__dirname + '/dist/MyResume'));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 app.get('/api/codechef/:handle', (req, res) => {
+    console.log('Request came here');
     codechefLib.userSubmissions(req.params.handle)
         .then(data => res.send(data))
-        .catch(err => res.send({status: 'failed'}));
+        .catch(err => {
+            console.error(err);
+            res.send({status: 'failed'});
+        });
 });
 
 app.get('/*', (req, res) => {
+    console.log('Request came here also');
     res.sendFile(path.join(__dirname + '/dist/MyResume/index.html'));
 });
 

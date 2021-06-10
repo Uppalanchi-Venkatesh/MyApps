@@ -4,7 +4,7 @@ function codechefSubmissions() {
         alert("Enter the username");
         return false;
     }
-    const URL="http://localhost:3000/api/codechef/";
+    const URL="https://venkat-bz-weblearn.herokuapp.com/api/codechef/";
 
     fetch(`${URL}${username}`)
         .then(res => { return res.json(); })
