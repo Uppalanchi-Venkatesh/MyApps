@@ -11,10 +11,10 @@ app.use(cors());
 
 app.get('/api/codechef/:handle', (req, res) => {
     codechefLib.userSubmissions(req.params.handle)
-        .then(data => res.send(data))
+        .then(data => res.json(data))
         .catch(err => {
             console.error(err);
-            res.send({status: 'failed'});
+            res.json({status: 'failed'});
         });
 });
 
