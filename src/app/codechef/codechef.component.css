@@ -1,0 +1,58 @@
+.container {
+    font-family: 'calibri';
+}
+
+.cc-maintitle {
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: 2px underline;
+}
+
+.cc-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: initial;
+}
+
+#cc-username {
+    height: 30px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+}
+
+#cc-username:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,0.5);
+}
+
+#cc-username:focus {
+    outline: none;
+    box-shadow: 0 0 11px rgba(33,33,33,0.5);
+}
+
+.btn {
+    height: 30px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+/* #cc-response {
+    display: none;
+} */
+
+.cc-title {
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: 2px underline;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+}

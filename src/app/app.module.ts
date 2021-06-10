@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { MyComponents } from './app-routing.module';
+import { CodechefComponent } from './codechef/codechef.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyComponents,
+    CodechefComponent,
   ],
   imports: [
     BrowserModule,

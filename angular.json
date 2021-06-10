@@ -39,7 +39,8 @@
               "./src/assets/JS/GoogleChart.js",
               "./src/assets/JS/Codeforces.js",
               "./src/assets/JS/Todo.js",
-              "./src/assets/JS/TodoWithStorage.js"
+              "./src/assets/JS/TodoWithStorage.js",
+              "./src/assets/JS/Codechef.js"
             ]
           },
           "configurations": {

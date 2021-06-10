@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppleComponent } from './apple/apple.component';
+import { CodechefComponent } from './codechef/codechef.component';
 import { CodeforcesComponent } from './codeforces/codeforces.component';
 import { ColorgeneratorComponent } from './colorgenerator/colorgenerator.component';
 import { DefaultComponent } from './default/default.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'cfcrawler', component: CodeforcesComponent, data: {title : 'Codeforces Data'}},
   {path: 'todo', component: TodoComponent, data: {title : 'Todo List'}},
   {path: 'todowithstorage', component: TodowithstorageComponent, data: {title : 'Todo List With Storage'}},
+  {path: 'cccrawler', component: CodechefComponent, data: {title : 'Codechef Data'}},
   {path: '**', component: DefaultComponent, data: {title : 'Error'}}
 ];
 
