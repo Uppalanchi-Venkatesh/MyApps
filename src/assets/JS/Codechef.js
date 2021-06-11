@@ -74,7 +74,7 @@ function codechefSubmissions() {
             maindiv.append(table);
         })
         .catch(err => {
-            console.error("Error: " + err);
+            console.error(err);
             alert("Some error occured. Please try again");
         });
     

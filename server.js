@@ -23,9 +23,9 @@ app.get('/*', (req, res) => {
 });
 
 const serve_port = process.env.PORT || 3000;
-const server_host = process.env.YOUR_HOST || '0.0.0.0';
+//const server_host = process.env.YOUR_HOST || '0.0.0.0';
 
-app.listen(serve_port, server_host, () => {
+app.listen(serve_port, () => {
     console.log(`server started at port ${serve_port}`);
 });
 
