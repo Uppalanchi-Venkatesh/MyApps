@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
 module.exports = {
     userDetails: async(handle) => {
         let details = [],status = 'ok';
-        const browser = await puppeteer.launch({ headless: true, defaultViewport: null});
+        const browser = await puppeteer.launch({ headless: false, defaultViewport: null});
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
         page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
@@ -19,7 +19,7 @@ module.exports = {
 
     userContestsWithRanks: async(handle) => {
         let contests = [],status = 'ok';
-        const browser = await puppeteer.launch({ headless: true, defaultViewport: null});
+        const browser = await puppeteer.launch({ headless: false, defaultViewport: null});
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
         page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
@@ -39,7 +39,7 @@ module.exports = {
     userSubmissions: async(handle) => {
         let submissions = [],status = 'ok';
         const browser = await puppeteer.launch({ 
-            headless: true, 
+            headless: false, 
             defaultViewport: null, 
             args: [
                 '--disable-gpu',
