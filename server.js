@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 app.get('/api/codechef/:handle', (req, res) => {
-    codechefLib.userSubmissions(req.params.handle)
+    codechefLib.userContestsWithRanks(req.params.handle)
         .then(data => res.json(data))
         .catch(err => {
             console.error(err);
