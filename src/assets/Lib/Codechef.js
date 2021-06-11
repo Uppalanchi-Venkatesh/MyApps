@@ -42,6 +42,7 @@ module.exports = {
         let submissions = [],status = 'ok';
         const browser = await puppeteer.launch({ 
             headless: true, 
+            args: ['--no-sandbox'],
             defaultViewport: null
         });
         const page = await browser.newPage();
