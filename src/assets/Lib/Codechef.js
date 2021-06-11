@@ -6,7 +6,12 @@ const chromium_path = 'node_modules/puppeteer/.local-chromium/win64-818858/chrom
 module.exports = {
     userDetails: async(handle) => {
         let details = [],status = 'ok';
-        const browser = await puppeteer.launch({ headless: true, defaultViewport: null, ...options});
+        const browser = await puppeteer.launch({ 
+            headless: true, 
+            args: ['--no-sandbox'],
+            defaultViewport: null,
+            executablePath: chromium_path
+        });
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
         page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
@@ -21,7 +26,12 @@ module.exports = {
 
     userContestsWithRanks: async(handle) => {
         let contests = [],status = 'ok';
-        const browser = await puppeteer.launch({ headless: true, defaultViewport: null, executablePath: chromium_path});
+        const browser = await puppeteer.launch({ 
+            headless: true, 
+            args: ['--no-sandbox'],
+            defaultViewport: null,
+            executablePath: chromium_path
+        });
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
         page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
@@ -43,7 +53,8 @@ module.exports = {
         const browser = await puppeteer.launch({ 
             headless: true, 
             args: ['--no-sandbox'],
-            defaultViewport: null
+            defaultViewport: null,
+            executablePath: chromium_path
         });
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
