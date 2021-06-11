@@ -10,6 +10,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 app.get('/api/codechef/:handle', (req, res) => {
+    req.setTimeout(60*60*60*1000);
     codechefLib.userContestsWithRanks(req.params.handle)
         .then(data => res.json(data))
         .catch(err => {
