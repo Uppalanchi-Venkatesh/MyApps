@@ -43,8 +43,8 @@ function codechefSubmissions() {
     */
     
    
-    const URL = "https://venkat-bz-weblearn.herokuapp.com/api/codechef/";
-    //const URL = "/api/codechef/";
+    //const URL = "https://venkat-bz-weblearn.herokuapp.com/api/codechef/";
+    const URL = "/api/codechef/";
     fetch(`${URL}${username}`, {cache: 'no-store'})
         .then(res => { return res.json(); })
         .then(data => {

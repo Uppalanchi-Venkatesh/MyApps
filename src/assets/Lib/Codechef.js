@@ -1,8 +1,7 @@
 const puppeteer = require('puppeteer');
-let options = {}
-if(__dirname.includes('resources')) {
-    options = {executablePath: __dirname.replace('app.asar', 'node_modules/puppeteer/.local-chromium/win64-818858/chrome-win/chrome.exe')}
-}
+
+const chromium_path = 'node_modules/puppeteer/.local-chromium/win64-818858/chrome-win/chrome.exe';
+
 
 module.exports = {
     userDetails: async(handle) => {
@@ -22,7 +21,7 @@ module.exports = {
 
     userContestsWithRanks: async(handle) => {
         let contests = [],status = 'ok';
-        const browser = await puppeteer.launch({ headless: true, defaultViewport: null, ...options});
+        const browser = await puppeteer.launch({ headless: true, defaultViewport: null, executablePath: chromium_path});
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
         page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
@@ -43,18 +42,7 @@ module.exports = {
         let submissions = [],status = 'ok';
         const browser = await puppeteer.launch({ 
             headless: true, 
-            defaultViewport: null, 
-            args: [
-                '--disable-gpu',
-                '--disable-dev-shm-usage',
-                '--disable-setuid-sandbox',
-                '--no-first-run',
-                '--no-sandbox',
-                '--no-zygote',
-                '--single-process'
-            ],
-            ignoreDefaultArgs: ['--disable-extensions'],
-            ...options
+            defaultViewport: null
         });
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);

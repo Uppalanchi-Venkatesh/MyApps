@@ -10,7 +10,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 app.get('/api/codechef/:handle', (req, res) => {
-    req.setTimeout(60*60*60*1000);
     codechefLib.userSubmissions(req.params.handle)
         .then(data => res.json(data))
         .catch(err => {
@@ -24,9 +23,9 @@ app.get('/*', (req, res) => {
 });
 
 const serve_port = process.env.PORT || 3000;
-//const server_host = process.env.YOUR_HOST || '0.0.0.0';
+const server_host = process.env.YOUR_HOST || '0.0.0.0';
 
-app.listen(serve_port, () => {
+app.listen(serve_port,server_host, () => {
     console.log(`server started at port ${serve_port}`);
 });
 
