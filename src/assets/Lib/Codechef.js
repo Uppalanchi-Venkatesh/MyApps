@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const chromium_path = 'node_modules/puppeteer/.local-chromium/win64-818858/chrome-win/chrome.exe';
+//const chromium_path = 'node_modules/puppeteer/.local-chromium/win64-818858/chrome-win/chrome.exe';
 
 
 module.exports = {
@@ -9,8 +9,7 @@ module.exports = {
         const browser = await puppeteer.launch({
             headless: true,
             args: ['--no-sandbox'],
-            defaultViewport: null,
-            executablePath: chromium_path
+            defaultViewport: null
         });
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
@@ -29,8 +28,7 @@ module.exports = {
         const browser = await puppeteer.launch({
             headless: true,
             args: ['--no-sandbox'],
-            defaultViewport: null,
-            executablePath: chromium_path
+            defaultViewport: null
         });
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
@@ -53,8 +51,7 @@ module.exports = {
         const browser = await puppeteer.launch({
             headless: true,
             args: ['--no-sandbox'],
-            defaultViewport: null,
-            executablePath: chromium_path
+            defaultViewport: null
         });
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
