@@ -41,8 +41,10 @@ function codechefSubmissions() {
         }
     });
     */
-
-    const URL = "/api/codechef/";
+    
+   
+    const URL = "https://venkat-bz-weblearn.herokuapp.com/api/codechef/";
+    //const URL = "/api/codechef/";
     fetch(`${URL}${username}`, {cache: 'no-store'})
         .then(res => { return res.json(); })
         .then(data => {
@@ -77,5 +79,4 @@ function codechefSubmissions() {
             console.error(err);
             alert("Some error occured. Please try again");
         });
-    
 }

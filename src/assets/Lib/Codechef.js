@@ -38,7 +38,18 @@ module.exports = {
 
     userSubmissions: async(handle) => {
         let submissions = [],status = 'ok';
-        const browser = await puppeteer.launch({ headless: true, defaultViewport: null});
+        const browser = await puppeteer.launch({ 
+            headless: true, 
+            defaultViewport: null, 
+            args: [
+            '--disable-gpu',
+            '--disable-dev-shm-usage',
+            '--disable-setuid-sandbox',
+            '--no-first-run',
+            '--no-sandbox',
+            '--no-zygote',
+            '--single-process'
+        ]});
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0);
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
