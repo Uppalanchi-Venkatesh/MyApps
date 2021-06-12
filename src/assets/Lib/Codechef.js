@@ -58,7 +58,7 @@ module.exports = {
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
         await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load', timeout: 0 });
         const pages = await parseInt(await (await page.$eval('#loader > div', el => el.textContent)).split(' ')[2]);
-        for (let i = 1; i <= pages; i++) {
+        for (let i = 1; i < pages; i++) {
             let rows = await page.$eval('#rankContentDiv > div:nth-child(1) > table > tbody', el => el.children.length);
             for (let j = 1; j <= rows; j++) {
                 let problem = [];
