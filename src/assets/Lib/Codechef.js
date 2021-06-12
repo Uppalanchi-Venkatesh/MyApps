@@ -93,7 +93,13 @@ module.exports = {
                 let problem = [];
                 for (let k = 1; k <= 4; k++) {
                     let selector = `#rankContentDiv > div:nth-child(1) > table > tbody > tr:nth-child(${j}) > td:nth-child(${k})`;
-                    if (k == 3) {
+                    if(k==2) {
+                        let temp = [];
+                        temp.push(await page.$eval(selector, el => el.textContent.trim()));
+                        temp.push(await page.$eval(`${selector} > a`, el => el.getAttribute('href')));
+                        problem.push(temp);
+                    }
+                    else if (k == 3) {
                         let verdict = await page.$eval(`${selector} > span`, el => el.getAttribute('title'));
                         if (verdict == '') problem.push('accepted');
                         else problem.push(verdict);

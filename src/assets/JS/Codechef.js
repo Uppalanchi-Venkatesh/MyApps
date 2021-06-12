@@ -1,10 +1,11 @@
 function codechefSubmissions() {
     const username = document.getElementById("cc-username").value;
-    if(!username) {
+    if (!username) {
         alert("Enter the username");
         return false;
     }
     /*
+    Using Jquery
     $.ajax({
         url: `/api/codechef/${username}`,
         method: 'GET',
@@ -41,34 +42,40 @@ function codechefSubmissions() {
         }
     });
     */
-    
-   
-    //const URL = "https://venkat-bz-weblearn.herokuapp.com/api/codechef/";
+
     const URL = '/api/codechef/';
-    fetch(`${URL}${username}`, {cache: 'no-store'})
+    const href = 'https://www.codechef.com';
+    fetch(`${URL}${username}`)
         .then(res => { return res.json(); })
         .then(data => {
-            if(data.status=="failed") {
+            if (data.status == "failed") {
                 alert("Incorrect username");
                 return false;
             }
             let maindiv = document.getElementById('cc-response');
             maindiv.innerHTML = '';
-            let heads = ['Date/Time','Problem','Verdict','Language'];
+            let heads = ['Date/Time', 'Problem', 'Verdict', 'Language'];
             let table = document.createElement('table');
-            table.setAttribute('class','table table-bordered');
+            table.setAttribute('class', 'table table-bordered');
             let tr = document.createElement('tr');
-            for(let val of heads) {
+            for (let val of heads) {
                 let th = document.createElement('th');
                 th.append(document.createTextNode(val));
                 tr.append(th);
             }
             table.append(tr);
-            for(let problem of data.submissions) {
+            for (let problem of data.submissions) {
                 let tr = document.createElement('tr');
-                for(let val of problem) {
+                for (let i = 0; i < problem.length; i++) {
                     let td = document.createElement('td');
-                    td.append(document.createTextNode(val));
+                    if (i == 1) {
+                        let link = document.createElement('a');
+                        link.append(document.createTextNode(problem[i][0]));
+                        link.setAttribute('href', `${href}${problem[i][1]}`);
+                        link.setAttribute('target', '_blank');
+                        td.append(link);
+                    }
+                    else td.append(document.createTextNode(problem[i]));
                     tr.append(td);
                 }
                 table.append(tr);
