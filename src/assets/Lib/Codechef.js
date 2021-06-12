@@ -2,17 +2,26 @@ const puppeteer = require('puppeteer');
 
 //const chromium_path = 'node_modules/puppeteer/.local-chromium/win64-818858/chrome-win/chrome.exe';
 
-
 module.exports = {
     userDetails: async (handle) => {
         let details = [], status = 'ok';
         const browser = await puppeteer.launch({
             headless: true,
-            args: ['--no-sandbox'],
-            defaultViewport: null
+            args: [
+                "--no-sandbox",
+                "--disabled-setupid-sandbox",
+                '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--no-first-run',
+                '--no-sandbox',
+                '--no-zygote',
+                '--single-process'
+            ],
+            defaultViewport: null,
+            ignoreDefaultArgs: ['--disable-extensions']
         });
         const page = await browser.newPage();
-        await page.setDefaultNavigationTimeout(60*60*1000);
+        await page.setDefaultNavigationTimeout(60 * 60 * 1000);
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
         await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load', timeout: 0 });
         const name = await page.$eval('body > main > div > div > div > div > div > header > h2', el => el.textContent.trim());
@@ -27,11 +36,21 @@ module.exports = {
         let contests = [], status = 'ok';
         const browser = await puppeteer.launch({
             headless: true,
-            args: ['--no-sandbox'],
-            defaultViewport: null
+            args: [
+                "--no-sandbox",
+                "--disabled-setupid-sandbox",
+                '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--no-first-run',
+                '--no-sandbox',
+                '--no-zygote',
+                '--single-process'
+            ],
+            defaultViewport: null,
+            ignoreDefaultArgs: ['--disable-extensions']
         });
         const page = await browser.newPage();
-        await page.setDefaultNavigationTimeout(60*60*1000);
+        await page.setDefaultNavigationTimeout(60 * 60 * 1000);
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
         await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load', timeout: 0 });
         // let rows = await page.$eval('#hp-sidebar-blurbRating > div > table > tbody', el => el.children.length);
@@ -50,13 +69,23 @@ module.exports = {
         let submissions = [], status = 'ok';
         const browser = await puppeteer.launch({
             headless: true,
-            args: ['--no-sandbox'],
-            defaultViewport: null
+            args: [
+                "--no-sandbox",
+                "--disabled-setupid-sandbox",
+                '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--no-first-run',
+                '--no-sandbox',
+                '--no-zygote',
+                '--single-process'
+            ],
+            defaultViewport: null,
+            ignoreDefaultArgs: ['--disable-extensions']
         });
         const page = await browser.newPage();
-        await page.setDefaultNavigationTimeout(60*60*1000);
+        await page.setDefaultNavigationTimeout(60 * 60 * 1000);
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
-        await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load', timeout: 0 });
+        await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load' });
         const pages = await parseInt(await (await page.$eval('#loader > div', el => el.textContent)).split(' ')[2]);
         for (let i = 1; i < pages; i++) {
             let rows = await page.$eval('#rankContentDiv > div:nth-child(1) > table > tbody', el => el.children.length);
@@ -73,7 +102,7 @@ module.exports = {
                 }
                 submissions.push(problem);
             }
-            await page.click('#rankContentDiv > table > tbody > tr > td:nth-child(3) > a', {waitUntil: 'load'}).catch(err => console.error(err));
+            await page.click('#rankContentDiv > table > tbody > tr > td:nth-child(3) > a', { waitUntil: 'load' }).catch(err => console.error(err));
         }
         return { status, submissions };
     }
