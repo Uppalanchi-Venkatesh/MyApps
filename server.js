@@ -2,14 +2,18 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const cors = require('cors');
+const timeout = require('connect-timeout');
 const codechefLib = require('./src/assets/Lib/Codechef');
 
 app.use(express.static(__dirname + '/dist/MyResume'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
+app.use(timeout('5s'));
 
 app.get('/api/codechef/:handle', (req, res) => {
+    req.clearTimeout();
+    req.setTimeout(40*1000);  //40 seconds timeout
     codechefLib.userSubmissions(req.params.handle)
         .then(data => res.json(data))
         .catch(err => {
