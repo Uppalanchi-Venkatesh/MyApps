@@ -7,7 +7,7 @@ module.exports = {
     userDetails: async (handle) => {
         let details = [], status = 'ok';
         const browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             args: ['--no-sandbox'],
             defaultViewport: null
         });
@@ -26,7 +26,7 @@ module.exports = {
     userContestsWithRanks: async (handle) => {
         let contests = [], status = 'ok';
         const browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             args: ['--no-sandbox'],
             defaultViewport: null
         });
@@ -49,7 +49,7 @@ module.exports = {
     userSubmissions: async (handle) => {
         let submissions = [], status = 'ok';
         const browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             args: ['--no-sandbox'],
             defaultViewport: null
         });
