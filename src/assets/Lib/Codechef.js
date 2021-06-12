@@ -7,12 +7,12 @@ module.exports = {
     userDetails: async (handle) => {
         let details = [], status = 'ok';
         const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             args: ['--no-sandbox'],
             defaultViewport: null
         });
         const page = await browser.newPage();
-        await page.setDefaultNavigationTimeout(0);
+        await page.setDefaultNavigationTimeout(60*60*1000);
         page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
         await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load', timeout: 0 });
         const name = await page.$eval('body > main > div > div > div > div > div > header > h2', el => el.textContent.trim());
@@ -26,12 +26,12 @@ module.exports = {
     userContestsWithRanks: async (handle) => {
         let contests = [], status = 'ok';
         const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             args: ['--no-sandbox'],
             defaultViewport: null
         });
         const page = await browser.newPage();
-        await page.setDefaultNavigationTimeout(0);
+        await page.setDefaultNavigationTimeout(60*60*1000);
         page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
         await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load', timeout: 0 });
         // let rows = await page.$eval('#hp-sidebar-blurbRating > div > table > tbody', el => el.children.length);
@@ -49,12 +49,12 @@ module.exports = {
     userSubmissions: async (handle) => {
         let submissions = [], status = 'ok';
         const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             args: ['--no-sandbox'],
             defaultViewport: null
         });
         const page = await browser.newPage();
-        await page.setDefaultNavigationTimeout(0);
+        await page.setDefaultNavigationTimeout(60*60*1000);
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
         await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load', timeout: 0 });
         const pages = await parseInt(await (await page.$eval('#loader > div', el => el.textContent)).split(' ')[2]);
