@@ -87,13 +87,13 @@ module.exports = {
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
         await page.goto(`https://www.codechef.com/users/${handle}`, { waitUntil: 'load' });
         const pages = await parseInt(await (await page.$eval('#loader > div', el => el.textContent)).split(' ')[2]);
-        for (let i = 1; i < pages; i++) {
+        for (let i = 1; i <= pages; i++) {
             let rows = await page.$eval('#rankContentDiv > div:nth-child(1) > table > tbody', el => el.children.length);
             for (let j = 1; j <= rows; j++) {
                 let problem = [];
                 for (let k = 1; k <= 4; k++) {
                     let selector = `#rankContentDiv > div:nth-child(1) > table > tbody > tr:nth-child(${j}) > td:nth-child(${k})`;
-                    if(k==2) {
+                    if (k == 2) {
                         let temp = [];
                         temp.push(await page.$eval(selector, el => el.textContent.trim()));
                         temp.push(await page.$eval(`${selector} > a`, el => el.getAttribute('href')));
@@ -108,7 +108,7 @@ module.exports = {
                 }
                 submissions.push(problem);
             }
-            await page.click('#rankContentDiv > table > tbody > tr > td:nth-child(3) > a', { waitUntil: 'load' }).catch(err => console.error(err));
+            if (i != pages) await page.click('#rankContentDiv > table > tbody > tr > td:nth-child(3) > a', { waitUntil: 'load' }).catch(err => console.error(err));
         }
         return { status, submissions };
     }
